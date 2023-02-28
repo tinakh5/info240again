@@ -1,0 +1,38 @@
+body {
+  font-family: arial;
+}
+
+/*displaying url after hyperlinks*/
+a::after {
+  content: " (" attr(href) ")";
+}
+
+/*display relative urls as absolute urls*/
+a:not([href^="http"])::after {
+  content: " (https://40px.us/b6/final/" attr(href) ")";
+}
+
+/* print source url for media (see lecture) */
+.media::after {
+  content: " [Media URL: " attr(data-url) "]";
+}
+
+/* hiding extra elements*/
+a[href^="#"], .nav-bar, .img-logo-left, .img-logo-right, .img-headshot, .iframe, .shop-logo, .sidepanel img, .intralink-nav-list {
+  display: none;
+}
+       
+table, td, th {
+  border-collapse: collapse;
+  border: 1px solid #555;
+}
+
+/* borders to separate sections of content */
+.banner, main, .sidepanel {
+  border-bottom: 1px dotted #555;
+}
+       
+.banner, .site-footer {
+  text-align: center;
+  font-style: italic;
+}
